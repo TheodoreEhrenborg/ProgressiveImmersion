@@ -54,9 +54,13 @@ function translate ( wordLower, matchedArray, textNode, intersectionTarget, dict
 		e.target.innerHTML = e.target.getAttribute( 'data-original-word' ) ?? '';
 	});
 	wordElement.addEventListener( 'mouseout', e => {
-		e.target.innerHTML = e.target.getAttribute( 'data-translated-word' ) ?? '';
-	});
+		e.target.innerHTML = 'foo';
 
+setTimeout(() => {
+		e.target.innerHTML = e.target.getAttribute( 'data-translated-word' ) ?? '';
+
+
+} , 1000)});
 	const otherTextHalf = textNode.splitText( wordIndex );
 	otherTextHalf.textContent = otherTextHalf.textContent.slice( originalWord.length );
 
