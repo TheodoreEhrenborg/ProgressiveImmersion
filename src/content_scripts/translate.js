@@ -18,7 +18,7 @@ customElements.define( 'progressive-immersion-word', ProgressiveImmersionWord );
 
 // Weirdly in some cases(like wikipedia) where the site uses the `.nodeType` property
 // it throws a permission error with the custom element.
-
+import pinyin from "pinyin";
 
 function translate ( wordLower, matchedArray, textNode, intersectionTarget, dictionary, origin, target ) {
 	if ( dictionary?.[origin]?.[target] === undefined ) {
@@ -55,6 +55,11 @@ function translate ( wordLower, matchedArray, textNode, intersectionTarget, dict
 	});
 	wordElement.addEventListener( 'mouseout', e => {
 		e.target.innerHTML = 'foo';
+
+console.log(pinyin("中心", {
+  heteronym: true,			  
+  segment: true
+}));  
 
 setTimeout(() => {
 		e.target.innerHTML = e.target.getAttribute( 'data-translated-word' ) ?? '';
