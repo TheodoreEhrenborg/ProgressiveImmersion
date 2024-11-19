@@ -55,7 +55,6 @@ function translate ( wordLower, matchedArray, textNode, intersectionTarget, dict
 	});
 	wordElement.addEventListener( 'mouseout', e => {
 		e.target.innerHTML = pinyin(e.target.getAttribute( 'data-translated-word'), {
-							heteronym: true,
 							segment: true} );
 		setTimeout(() => {
 				e.target.innerHTML = e.target.getAttribute( 'data-translated-word' ) ?? '';
