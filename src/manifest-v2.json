@@ -1,6 +1,6 @@
 {
 	"manifest_version": 2,
-	"name": "Progressive Immersion",
+	"name": "Progressive Immersion Pinyin",
 	"description": "A browser extension that progressively immerses you in a language.",
 	"icons": {
 		"48": "images/logo-48.png",
@@ -17,7 +17,7 @@
 	],
 	"browser_action": {
 		"default_icon": "images/logo-32.png",
-		"default_title": "Progressive Immersion",
+		"default_title": "Progressive Immersion Pinyin",
 		"default_popup": "popup/index.html"
 	},
 	"content_scripts": [
