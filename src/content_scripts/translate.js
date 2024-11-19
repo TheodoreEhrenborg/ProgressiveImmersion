@@ -54,18 +54,14 @@ function translate ( wordLower, matchedArray, textNode, intersectionTarget, dict
 		e.target.innerHTML = e.target.getAttribute( 'data-original-word' ) ?? '';
 	});
 	wordElement.addEventListener( 'mouseout', e => {
-		e.target.innerHTML = 'foo';
+		e.target.innerHTML = pinyin(e.target.getAttribute( 'data-translated-word'), {
+							heteronym: true,
+							segment: true} );
+		setTimeout(() => {
+				e.target.innerHTML = e.target.getAttribute( 'data-translated-word' ) ?? '';
+				} , 1000)
 
-console.log(pinyin("中心", {
-  heteronym: true,			  
-  segment: true
-}));  
-
-setTimeout(() => {
-		e.target.innerHTML = e.target.getAttribute( 'data-translated-word' ) ?? '';
-
-
-} , 1000)});
+	});
 	const otherTextHalf = textNode.splitText( wordIndex );
 	otherTextHalf.textContent = otherTextHalf.textContent.slice( originalWord.length );
 
